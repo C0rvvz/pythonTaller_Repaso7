@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 @dataclass
 
+
 class Elemento:
     def _init_(self, nombre:str):
         self.nombre:str = nombre
@@ -10,6 +11,8 @@ class Elemento:
         if isinstance(other, Elemento):
             return self.nombre == other.nombre
         return False
+
+@classmethod
 
 class Conjunto:
     elementos: list =[]
@@ -56,7 +59,6 @@ class Conjunto:
 
         return nuevo_conjunto
 
-@classmethod
     def intersectar(cls, conjunto1, conjunto2):
         nombre = f"{conjunto1.nombre} INTERSECTADO {conjunto2.nombre}"
         resultado = Conjunto(nombre)
